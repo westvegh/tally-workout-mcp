@@ -2,8 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.westvegh/tally-workout",
   "title": "Tally Workout",
-  "description": "The first strength-training app Claude can write to. Reads real workout history, writes planned workouts back — plan conversationally, log in the gym. Respects in-app edits. First-party, OAuth 2.1.",
+  "description": "First strength app Claude can write to: plan training in chat, it lands in the app ready to log.",
   "version": "1.0.0",
   "websiteUrl": "https://tallyworkout.app",
-  "remotes": [{ "type": "streamable-http", "url": "https://mcp.tallyworkout.app/api/mcp" }]
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.tallyworkout.app/api/mcp"
+    }
+  ]
 }
