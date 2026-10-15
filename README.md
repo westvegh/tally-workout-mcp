@@ -75,5 +75,6 @@ Each link has the full steps.
 
 - Site: https://tallyworkout.app
 - Builder reference: https://tallyworkout.app/connect/mcp
+- Guides: https://tallyworkout.app/guides (for example, [plan your workouts with Claude](https://tallyworkout.app/guides/plan-workouts-with-claude))
 - App Store: https://apps.apple.com/app/id6758911546
 - Support: support@tallyworkout.app
