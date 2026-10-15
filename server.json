@@ -2,13 +2,25 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.westvegh/tally-workout",
   "title": "Tally Workout",
-  "description": "First strength app Claude can write to: plan training in chat, it lands in the app ready to log.",
-  "version": "1.0.0",
+  "description": "iPhone strength log. Any MCP agent reads your training and plans workouts in the Tally app.",
+  "version": "1.1.0",
   "websiteUrl": "https://tallyworkout.app",
+  "repository": {
+    "url": "https://github.com/westvegh/tally-workout-mcp",
+    "source": "github"
+  },
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.tallyworkout.app/api/mcp"
+      "url": "https://mcp.tallyworkout.app/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional. OAuth 2.1 is the default. For clients without OAuth: Bearer <API key from Tally \u2192 Settings \u2192 API keys>.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
     }
   ]
 }
