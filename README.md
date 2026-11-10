@@ -85,6 +85,11 @@ Each link has the full steps.
   The plan, update, move and delete tools skip it unless the user asks for an override.
 - **Edits check the version.** If a day or a finished workout changed after the agent
   read it, nothing is written and the result reports a conflict.
+- **Cues and demo videos have their own fields.** Each planned exercise has an optional
+  `note` (a short coaching cue, plain text, up to 300 characters) and an optional `demoUrl`
+  (an http or https link to a video of that exact exercise, usually one the user shared).
+  The Tally app shows the note under the exercise name and the link as the
+  **Watch your custom video** button. Keep the exercise name plain.
 - **Each user sees only their own data.** OAuth tokens and API keys are scoped to one
   account. The user can revoke them at any time.
 
