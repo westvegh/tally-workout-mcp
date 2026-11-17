@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.westvegh/tally-workout",
   "title": "Tally Workout",
-  "description": "iPhone strength log. Any MCP agent reads your training and plans workouts in the Tally app.",
-  "version": "1.1.0",
+  "description": "Strength log with a mobile app. Any MCP agent reads your training and plans workouts in the app.",
+  "version": "1.1.1",
   "websiteUrl": "https://tallyworkout.app",
   "repository": {
     "url": "https://github.com/westvegh/tally-workout-mcp",
@@ -16,7 +16,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Optional. OAuth 2.1 is the default. For clients without OAuth: Bearer <API key from Tally \u2192 Settings \u2192 API keys>.",
+          "description": "Optional. OAuth 2.1 is the default. For clients without OAuth: Bearer <API key from Tally → Settings → API keys>.",
           "isRequired": false,
           "isSecret": true
         }
