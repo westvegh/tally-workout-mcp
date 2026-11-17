@@ -1,10 +1,11 @@
 # Tally Workout MCP server
 
 Docs for the remote [Model Context Protocol](https://modelcontextprotocol.io) server of
-[Tally Workout](https://tallyworkout.app), a free iPhone strength log. Your AI agent reads
-your training history and plans workouts in the Tally app. You log every set at the gym.
-Next week, the agent plans from what you actually lifted. When you ask, the agent can also
-log, change or delete a finished workout, and you can undo each change for 7 days.
+[Tally Workout](https://tallyworkout.app), a strength-training log with a mobile app. Your
+AI agent reads your training history and plans workouts in the Tally app. You log every set
+at the gym. Next week, the agent plans from what you actually lifted. When you ask, the
+agent can also log, change or delete a finished workout, and you can undo each change for
+7 days.
 
 It works with Claude, Claude Code, Codex, ChatGPT, Muse, Hark, Perplexity, Dots and any
 MCP client that supports OAuth 2.1 or a bearer token.
@@ -30,7 +31,7 @@ https://mcp.tallyworkout.app/api/mcp
 
 ## Setup by agent
 
-You need the [Tally iPhone app](https://apps.apple.com/app/id6758911546) and a Tally account.
+You need the [Tally mobile app](https://tallyworkout.app) and a Tally account.
 Each link has the full steps.
 
 | Agent | Auth | Steps |
@@ -47,7 +48,7 @@ Each link has the full steps.
 
 ## Tools
 
-21 tools: 10 read, 11 write.
+24 tools: 12 read, 12 write.
 
 | Tool | Type | What it does |
 |------|------|--------------|
@@ -61,12 +62,15 @@ Each link has the full steps.
 | `get_training_summary` | read | Returns weekly totals for up to 12 weeks: workouts, sets, volume, time, volume by muscle, and missed or skipped plans. |
 | `get_saved_workouts` | read | Returns the user's saved and favorite workout templates. |
 | `get_workout_versions` | read | Lists the restorable versions of one finished workout, also a deleted one. |
+| `get_programs` | read | Returns the training programs on Tally's shelf, with level, days a week and equipment. |
+| `get_program` | read | Returns one program: its notes and its weeks. |
 | `plan_workout_day` | write | Creates or replaces one planned day. |
 | `plan_workout_range` | write | Creates or replaces up to 31 planned days in one call. |
 | `update_planned_workout` | write | Changes part of one planned day: add, remove or change exercises. |
 | `move_planned_workout` | write | Moves a planned day to an empty date. |
 | `skip_planned_workout` | write | Marks a planned day as skipped, or restores it. Only the status changes. |
 | `delete_planned_workout` | write | Removes a planned day and returns it, so you can undo. |
+| `update_reminders` | write | Turns training-day reminders on or off, or changes their time. |
 | `log_workout` | write | Logs a finished workout to the user's history. Full access. |
 | `update_workout` | write | Changes one finished workout at its current version: fields, exercises or sets. Full access. |
 | `delete_workout` | write | Deletes one finished workout at its current version. Full access. |
@@ -98,5 +102,5 @@ Each link has the full steps.
 - Site: https://tallyworkout.app
 - Builder reference: https://tallyworkout.app/connect/mcp
 - Guides: https://tallyworkout.app/guides (for example, [plan your workouts with Claude](https://tallyworkout.app/guides/plan-workouts-with-claude))
-- App Store: https://apps.apple.com/app/id6758911546
+- Get the app: https://tallyworkout.app
 - Support: support@tallyworkout.app
